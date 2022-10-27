@@ -131,7 +131,6 @@ namespace Graph
             MakeBackgroundGrid();
             rbtnUnDirected.Checked = true;
             SPADijkstra.Checked = true;
-            dfs.Checked = true;
             rbDijkstra.Checked = true;
             this.Enabled = true;
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -425,8 +424,6 @@ namespace Graph
         private void EnableRadiosAndChecks()
         {
             slider.Enabled = true;
-            dfs.Enabled = true;
-            bfs.Enabled = true;
             rbDijkstra.Enabled = true;
             diagonal.Enabled = true;
             arrow.Enabled = true;
@@ -436,8 +433,6 @@ namespace Graph
         private void DisableRadiosAndChecks()
         {
             slider.Enabled = false;
-            dfs.Enabled = false;
-            bfs.Enabled = false;
             rbDijkstra.Enabled = false;
             diagonal.Enabled = false;
             arrow.Enabled = false;
@@ -612,8 +607,6 @@ namespace Graph
         private void ExpandNode()
         {
             if (rbDijkstra.Checked) dijkstraAlgorithm();
-            if (bfs.Checked) bfsAlgorithm();
-            if (dfs.Checked) dfsAlgorithm();
         }
 
 
@@ -705,7 +698,7 @@ namespace Graph
                 }
         }
 
-        private void bfsAlgorithm()
+        /*private void bfsAlgorithm()
         {
             if (closedSet.Count == 0)
             {
@@ -747,9 +740,9 @@ namespace Graph
                     grid[cur.row, cur.col] = RUNNING;
                 }
             }
-        }
+        }*/
 
-        private void dfsAlgorithm()
+       /* private void dfsAlgorithm()
         {
             if (closedSet.Count == 0)
             {
@@ -793,7 +786,7 @@ namespace Graph
                     grid[cur.row, cur.col] = RUNNING;
                 }
             }
-        }
+        }*/
 
         private void Path()
         {

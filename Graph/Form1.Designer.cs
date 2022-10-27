@@ -111,8 +111,6 @@
             this.RibbonDemoGrAlgo = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.RibbonGrDemoAlgo2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines();
             this.rbDijkstra = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton();
-            this.dfs = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton();
-            this.bfs = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton();
             this.RibbonDemoGrid = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.RibbonDemoGrGrid = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.Mazebtn = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
@@ -406,8 +404,8 @@
             this.TabSPA,
             this.TabDemo,
             this.TabHelp});
-            this.kryptonRibbon.SelectedTab = this.TabHome;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1034, 115);
+            this.kryptonRibbon.SelectedTab = this.TabDemo;
+            this.kryptonRibbon.Size = new System.Drawing.Size(1102, 115);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -711,22 +709,12 @@
             // RibbonGrDemoAlgo2
             // 
             this.RibbonGrDemoAlgo2.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.rbDijkstra,
-            this.dfs,
-            this.bfs});
+            this.rbDijkstra});
             this.RibbonGrDemoAlgo2.MinimumSize = ComponentFactory.Krypton.Ribbon.GroupItemSize.Large;
             // 
             // rbDijkstra
             // 
             this.rbDijkstra.TextLine1 = "Dijkstra";
-            // 
-            // dfs
-            // 
-            this.dfs.TextLine1 = "DFS";
-            // 
-            // bfs
-            // 
-            this.bfs.TextLine1 = "BFS";
             // 
             // RibbonDemoGrid
             // 
@@ -879,7 +867,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1051, 660);
+            this.ClientSize = new System.Drawing.Size(1119, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
@@ -984,8 +972,6 @@
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton RibbonBtnNew;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonDemoGrAlgo;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines RibbonGrDemoAlgo2;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton dfs;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton bfs;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton rbDijkstra;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonDemoGrid;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple RibbonDemoGrGrid;
