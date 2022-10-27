@@ -155,10 +155,10 @@ namespace Graph
         private Point[] CalcSquare(int r, int c)
         {
             Point[] polygon = {
-                new Point((int)(251 +     c*squareSize + 0), (int)(161 +     r*squareSize + 0)),
-                new Point((int)(251 + (c+1)*squareSize - 1), (int)(161 +     r*squareSize + 0)),
-                new Point((int)(251 + (c+1)*squareSize - 1), (int)(161 + (r+1)*squareSize - 1)),
-                new Point((int)(251 +     c*squareSize + 0), (int)(161 + (r+1)*squareSize - 1))
+                new Point( (251 +     c*squareSize + 0), (161 +     r*squareSize + 0)),
+                new Point( (251 + (c+1)*squareSize - 1), (161 +     r*squareSize + 0)),
+                new Point( (251 + (c+1)*squareSize - 1), (161 + (r+1)*squareSize - 1)),
+                new Point( (251 +     c*squareSize + 0), (161 + (r+1)*squareSize - 1))
             };
             return polygon;
         }
@@ -698,96 +698,6 @@ namespace Graph
                 }
         }
 
-        /*private void bfsAlgorithm()
-        {
-            if (closedSet.Count == 0)
-            {
-                openSet.Clear();
-                openSet.Add(new Cell(Start.row, Start.col));
-            }
-
-            if (openSet.Count == 0)
-            {
-                endOfSearch = true;
-                return;
-            }
-
-            Cell u = openSet[0];
-            openSet.RemoveAt(0);
-
-            grid[u.row, u.col] = CLOSED;
-
-            closedSet.Add(u);
-
-            if (u.row == Target.row && u.col == Target.col)
-            {
-                found = true;
-                endOfSearch = true;
-                grid[u.row, u.col] = TARGET;
-                return;
-            }
-
-            int count = diagonal.Checked == true ? 8 : 4;
-
-            for (int i = 0; i < count; i++)
-            {
-                Cell cur = new Cell(u.row + dx[i], u.col + dy[i]);
-                if (checkInOP(cur) || checkInCL(cur) || !checkCell(cur)) continue;
-                else
-                {
-                    openSet.Add(cur);
-                    par[cur.row, cur.col] = new Point(u.row, u.col);
-                    grid[cur.row, cur.col] = RUNNING;
-                }
-            }
-        }*/
-
-       /* private void dfsAlgorithm()
-        {
-            if (closedSet.Count == 0)
-            {
-                openSet.Clear();
-                openSet.Add(new Cell(Start.row, Start.col));
-            }
-
-            while (openSet.Count > 0 && checkInCL(openSet[0])) openSet.RemoveAt(0);
-
-            if (openSet.Count == 0)
-            {
-                endOfSearch = true;
-                return;
-            }
-
-            Cell u = openSet[0];
-            openSet.RemoveAt(0);
-
-            grid[u.row, u.col] = CLOSED;
-
-            closedSet.Add(u);
-
-            if (u.row == Target.row && u.col == Target.col)
-            {
-                found = true;
-                endOfSearch = true;
-                grid[u.row, u.col] = TARGET;
-                return;
-            }
-
-            int count = diagonal.Checked == true ? 8 : 4;
-
-            for (int i = 0; i < count; i++)
-            {
-                Cell cur = new Cell(u.row + dx[i], u.col + dy[i]);
-                if (checkInCL(cur) || !checkCell(cur)) continue;
-                else
-                {
-                    openSet.Insert(0, cur);
-                    par[cur.row, cur.col] = new Point(u.row, u.col);
-                    grid[cur.row, cur.col] = RUNNING;
-                }
-            }
-        }*/
-
         private void Path()
         {
             if (!found) return;
@@ -1033,8 +943,7 @@ namespace Graph
                     }
                     else
                     {
-                        MessageBox.Show("Input isn't correct", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        goto start;
+                        MessageBox.Show("Input isn't correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 picGraphView_MouseUp_Drawing(sender, e);

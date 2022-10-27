@@ -405,7 +405,7 @@
             this.TabDemo,
             this.TabHelp});
             this.kryptonRibbon.SelectedTab = this.TabDemo;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1102, 115);
+            this.kryptonRibbon.Size = new System.Drawing.Size(1170, 115);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -867,7 +867,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1119, 660);
+            this.ClientSize = new System.Drawing.Size(1187, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
@@ -916,7 +916,6 @@
         private System.Windows.Forms.Panel pnlGraph;
         private System.Windows.Forms.OpenFileDialog MyOpenFileDialog;
         private System.Windows.Forms.SaveFileDialog MySaveFileDialog;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.SaveFileDialog SaveFileDialogImage;
         private System.Windows.Forms.ColorDialog MyColorDialog;
@@ -927,8 +926,6 @@
         private System.Windows.Forms.ToolStripMenuItem copyMatrixToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.PictureBox picGraphView;
-        private System.Windows.Forms.ToolStripMenuItem guideToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panelControl;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonTab TabHome;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonFile;

@@ -7,7 +7,7 @@ namespace Graph
 {
     public class Dijkstra
     {
-        MyGraphic myGraphic = new MyGraphic();
+        readonly MyGraphic myGraphic = new MyGraphic(); 
 
         public void DijkstraSimple(ListView lv, ListView lvtable, int n, int s, int e, out bool isPath, RichTextBox txb, List<Point> pt, List<Form1.Segment> segment, List<Form1.Segment> tmp, List<int> _segment, List<List<Form1.Segment>> Segment_Review, bool undirected)
         {
@@ -83,13 +83,10 @@ namespace Graph
 
                 for (int i = 0; i < n; ++i)
                 {
-                    if (visited[i] && length[i] != oo)
+                    if (visited[i] && length[i] != oo && Mins > length[i])
                     {
-                        if (Mins > length[i])
-                        {
-                            v = i;
-                            Mins = length[i];
-                        }
+                        v = i;
+                        Mins = length[i];
                     }
                 }
 
@@ -196,17 +193,15 @@ namespace Graph
 
                 for (int i = 0; i < n; ++i)
                 {
-                    if (visited[i] && length[i] != oo)
+                    if (visited[i] && length[i] != oo && Mins > length[i])
                     {
-                        if (Mins > length[i])
-                        {
-                            v = i;
-                            Mins = length[i];
-                        }
+                        v = i;
+                        Mins = length[i];
                     }
                 }
 
-                if(item.SubItems[v].Text != "-") item.SubItems[v].Text += "*";
+                if(item.SubItems[v].Text != "-") 
+                    item.SubItems[v].Text += "*";
                 lvtable.Items.Add(item);
 
                 visited[v] = false;

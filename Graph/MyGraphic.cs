@@ -6,9 +6,8 @@ namespace Graph
 {
     public class MyGraphic
     {
-        private float radius = 13;
-
-        private int r = 35;
+        private readonly float radius = 13; //Bán kính
+        private readonly int r = 35;
 
         public void DrawPoint(Graphics g, Point p, string i, int width, Brush brush, Font f)
         {

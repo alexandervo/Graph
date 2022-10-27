@@ -3,6 +3,7 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Ribbon;
+using System.Text;
 
 namespace Graph
 {
@@ -11,7 +12,7 @@ namespace Graph
         public void SaveGraph(List<Point> pt, List<Form1.Segment> segment, bool directed, string path)
         {
             string graph = "";
-            for(int i = 0; i < pt.Count; ++i)
+            for (int i = 0; i < pt.Count; ++i)
                 graph += pt[i].X.ToString() + " " + pt[i].Y.ToString() + "\n";
             for (int i = 0; i < segment.Count; ++i)
                 graph += segment[i].S.ToString() + " " + segment[i].E.ToString() + " " + segment[i].W + "\n";

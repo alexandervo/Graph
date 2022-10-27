@@ -7,7 +7,7 @@ namespace Graph
 {
     public class FordBellman
     {
-        MyGraphic myGraphic = new MyGraphic();
+        readonly MyGraphic myGraphic = new MyGraphic();
 
         public void FordAll(ListView lv, ListView lvtable, int n, int s, out bool isPath, RichTextBox txb, List<Point> pt, List<Form1.Segment> segment, List<Form1.Segment> tmp, bool undirected)
         {
