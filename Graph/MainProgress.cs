@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Text;
 using ComponentFactory.Krypton.Toolkit;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace Graph
 {

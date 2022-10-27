@@ -268,7 +268,7 @@
             this.gboxPath.Size = new System.Drawing.Size(293, 160);
             this.gboxPath.TabIndex = 5;
             this.gboxPath.TabStop = false;
-            this.gboxPath.Text = "Path";
+            this.gboxPath.Text = "Đường đi";
             // 
             // txbLogDijkstra
             // 
@@ -320,7 +320,7 @@
             this.groupBox3.Size = new System.Drawing.Size(684, 174);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Table";
+            this.groupBox3.Text = "Bảng mô phỏng chạy tay";
             // 
             // groupBox1
             // 
@@ -342,7 +342,7 @@
             this.groupBox2.Size = new System.Drawing.Size(290, 145);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Adjacency Matrix";
+            this.groupBox2.Text = "Ma trận kề";
             // 
             // gboxLogs
             // 
@@ -353,7 +353,7 @@
             this.gboxLogs.Size = new System.Drawing.Size(296, 178);
             this.gboxLogs.TabIndex = 3;
             this.gboxLogs.TabStop = false;
-            this.gboxLogs.Text = "Logs";
+            this.gboxLogs.Text = "Nhật ký";
             // 
             // txbLogs
             // 
@@ -364,7 +364,7 @@
             this.txbLogs.ReadOnly = true;
             this.txbLogs.Size = new System.Drawing.Size(287, 156);
             this.txbLogs.TabIndex = 0;
-            this.txbLogs.Text = "Welcome! \n";
+            this.txbLogs.Text = "Chào ^^";
             // 
             // kryptonRibbon
             // 
@@ -384,7 +384,7 @@
             this.TabHelp});
             this.kryptonRibbon.SelectedContext = null;
             this.kryptonRibbon.SelectedTab = this.TabHome;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1052, 135);
+            this.kryptonRibbon.Size = new System.Drawing.Size(1136, 135);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -394,7 +394,7 @@
             this.RibbonGraphType,
             this.RibbonNew,
             this.RibbonEdit});
-            this.TabHome.Text = "Home";
+            this.TabHome.Text = "Các công cụ";
             // 
             // RibbonFile
             // 
@@ -403,7 +403,7 @@
             this.RibbonOpen,
             this.kryptonRibbonGroupSeparator1,
             this.RibbonGrSave});
-            this.RibbonFile.TextLine1 = "File";
+            this.RibbonFile.TextLine1 = "Tệp";
             // 
             // RibbonOpen
             // 
@@ -414,7 +414,7 @@
             // HomeOpen
             // 
             this.HomeOpen.ImageLarge = ((System.Drawing.Image)(resources.GetObject("HomeOpen.ImageLarge")));
-            this.HomeOpen.TextLine1 = "Open";
+            this.HomeOpen.TextLine1 = "Mở file";
             this.HomeOpen.Click += new System.EventHandler(this.btnOpenGraph_Click);
             // 
             // RibbonGrSave
@@ -429,13 +429,13 @@
             // 
             this.RibbonSave.Checked = true;
             this.RibbonSave.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonSave.ImageLarge")));
-            this.RibbonSave.TextLine1 = "Save      ";
+            this.RibbonSave.TextLine1 = "Lưu file";
             this.RibbonSave.Click += new System.EventHandler(this.btnSaveGraph_Click);
             // 
             // RibbonImage
             // 
             this.RibbonImage.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonImage.ImageLarge")));
-            this.RibbonImage.TextLine1 = "Save as image";
+            this.RibbonImage.TextLine1 = "Lưu thành ảnh";
             // 
             // RibbonGraphType
             // 
@@ -443,7 +443,7 @@
             this.grType,
             this.kryptonRibbonGroupSeparator7,
             this.grGridLine});
-            this.RibbonGraphType.TextLine1 = "GraphType";
+            this.RibbonGraphType.TextLine1 = "Loại đồ thị";
             // 
             // grType
             // 
@@ -454,11 +454,11 @@
             // rbtnUnDirected
             // 
             this.rbtnUnDirected.Checked = true;
-            this.rbtnUnDirected.TextLine1 = "Undirected";
+            this.rbtnUnDirected.TextLine1 = "Vô hướng";
             // 
             // rbtnDirected
             // 
-            this.rbtnDirected.TextLine1 = "Directed";
+            this.rbtnDirected.TextLine1 = "Có hướng";
             // 
             // grGridLine
             // 
@@ -469,7 +469,7 @@
             // 
             this.GridLine.Checked = true;
             this.GridLine.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.GridLine.TextLine1 = "GridLines";
+            this.GridLine.TextLine1 = "Lưới";
             this.GridLine.CheckedChanged += new System.EventHandler(this.GridLine_CheckedChanged);
             // 
             // RibbonNew
@@ -479,7 +479,7 @@
             this.RibbonNewGraph,
             this.kryptonRibbonGroupSeparator2,
             this.RibbonGrAdd});
-            this.RibbonNew.TextLine1 = "New";
+            this.RibbonNew.TextLine1 = "Thêm";
             // 
             // RibbonNewGraph
             // 
@@ -490,7 +490,7 @@
             // 
             this.RibbonBtnNew.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.RibbonBtnNew.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonBtnNew.ImageLarge")));
-            this.RibbonBtnNew.TextLine1 = "New Graph";
+            this.RibbonBtnNew.TextLine1 = "Đồ thị mới";
             this.RibbonBtnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // RibbonGrAdd
@@ -505,7 +505,7 @@
             this.RibbonAddVertex.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.RibbonAddVertex.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonAddVertex.ImageLarge")));
             this.RibbonAddVertex.ImageSmall = ((System.Drawing.Image)(resources.GetObject("RibbonAddVertex.ImageSmall")));
-            this.RibbonAddVertex.TextLine1 = "Add Vertex";
+            this.RibbonAddVertex.TextLine1 = "Thêm đỉnh";
             this.RibbonAddVertex.Click += new System.EventHandler(this.btnDrawPoint_Click);
             // 
             // RibbonAddEdge
@@ -513,7 +513,7 @@
             this.RibbonAddEdge.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.RibbonAddEdge.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonAddEdge.ImageLarge")));
             this.RibbonAddEdge.ImageSmall = ((System.Drawing.Image)(resources.GetObject("RibbonAddEdge.ImageSmall")));
-            this.RibbonAddEdge.TextLine1 = "Add Edge";
+            this.RibbonAddEdge.TextLine1 = "Thêm cạnh";
             this.RibbonAddEdge.Click += new System.EventHandler(this.btnDrawLine_Click);
             // 
             // RibbonEdit
@@ -522,7 +522,7 @@
             this.RibbonEdit.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.RibbonGrEdit,
             this.kryptonRibbonGroupTriple2});
-            this.RibbonEdit.TextLine1 = "Edit";
+            this.RibbonEdit.TextLine1 = "Chỉnh sửa";
             // 
             // RibbonGrEdit
             // 
@@ -535,21 +535,21 @@
             // 
             this.RibbonBtnMove.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.RibbonBtnMove.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonBtnMove.ImageLarge")));
-            this.RibbonBtnMove.TextLine1 = "Move Vertex";
+            this.RibbonBtnMove.TextLine1 = "Di chuyển đỉnh";
             this.RibbonBtnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // BtnErase
             // 
             this.BtnErase.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.BtnErase.ImageLarge = ((System.Drawing.Image)(resources.GetObject("BtnErase.ImageLarge")));
-            this.BtnErase.TextLine1 = "Cut Edge";
+            this.BtnErase.TextLine1 = "Xóa cạnh";
             this.BtnErase.Click += new System.EventHandler(this.btnCutLine_Click);
             // 
             // RibbonBtnColor
             // 
             this.RibbonBtnColor.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.RibbonBtnColor.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonBtnColor.ImageLarge")));
-            this.RibbonBtnColor.TextLine1 = "Color";
+            this.RibbonBtnColor.TextLine1 = "Màu sắc";
             this.RibbonBtnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // kryptonRibbonGroupTriple2
@@ -561,7 +561,7 @@
             // 
             this.btnRefresh.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.btnRefresh.ImageLarge = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageLarge")));
-            this.btnRefresh.TextLine1 = "Refresh";
+            this.btnRefresh.TextLine1 = "Làm mới";
             this.btnRefresh.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // TabSPA
@@ -570,14 +570,14 @@
             this.RibbonSPAAlgorithms,
             this.RibbonGrChoosePoint,
             this.RibbonGrRunMethod});
-            this.TabSPA.Text = "Shortest Path Algorithms";
+            this.TabSPA.Text = "Thuật toán đường đi ngắn nhất";
             // 
             // RibbonSPAAlgorithms
             // 
             this.RibbonSPAAlgorithms.DialogBoxLauncher = false;
             this.RibbonSPAAlgorithms.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.RibbonGrAlgo});
-            this.RibbonSPAAlgorithms.TextLine1 = "Algorithms";
+            this.RibbonSPAAlgorithms.TextLine1 = "Giải thuật";
             // 
             // RibbonGrAlgo
             // 
@@ -599,7 +599,7 @@
             this.RibbonGrChoosePoint.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.RibbonChoosePointLb,
             this.RibbonGrChoosePointVal});
-            this.RibbonGrChoosePoint.TextLine1 = "Choose Point";
+            this.RibbonGrChoosePoint.TextLine1 = "Chọn đỉnh";
             // 
             // RibbonChoosePointLb
             // 
@@ -609,11 +609,11 @@
             // 
             // SPAStartPoint
             // 
-            this.SPAStartPoint.TextLine1 = "Start Point";
+            this.SPAStartPoint.TextLine1 = "Bắt đầu";
             // 
             // SPAEndPoint
             // 
-            this.SPAEndPoint.TextLine1 = "End Point";
+            this.SPAEndPoint.TextLine1 = "Kết thúc";
             // 
             // RibbonGrChoosePointVal
             // 
@@ -648,7 +648,7 @@
             this.kryptonRibbonGroupSeparator3,
             this.kryptonRibbonGroupTriple1,
             this.kryptonRibbonGroupSeparator4});
-            this.RibbonGrRunMethod.TextLine1 = "Run Method";
+            this.RibbonGrRunMethod.TextLine1 = "Phương thức chạy";
             // 
             // kryptonRibbonGroupTriple1
             // 
@@ -660,21 +660,21 @@
             // 
             this.SPAStep.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.SPAStep.ImageLarge = ((System.Drawing.Image)(resources.GetObject("SPAStep.ImageLarge")));
-            this.SPAStep.TextLine1 = "Step-by-Step";
+            this.SPAStep.TextLine1 = "Chạy từng bước";
             this.SPAStep.Click += new System.EventHandler(this.btnRunStep_Click);
             // 
             // SPAPath
             // 
             this.SPAPath.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.SPAPath.ImageLarge = ((System.Drawing.Image)(resources.GetObject("SPAPath.ImageLarge")));
-            this.SPAPath.TextLine1 = "Path";
+            this.SPAPath.TextLine1 = "Đường đi ";
             this.SPAPath.Click += new System.EventHandler(this.btnRunAll_Click);
             // 
             // TabHelp
             // 
             this.TabHelp.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
             this.RibbonHelp});
-            this.TabHelp.Text = "Help";
+            this.TabHelp.Text = "Trợ giúp";
             // 
             // RibbonHelp
             // 
@@ -692,13 +692,13 @@
             // HelpGuide
             // 
             this.HelpGuide.ImageLarge = ((System.Drawing.Image)(resources.GetObject("HelpGuide.ImageLarge")));
-            this.HelpGuide.TextLine1 = "Guide";
+            this.HelpGuide.TextLine1 = "Hướng dẫn";
             this.HelpGuide.Click += new System.EventHandler(this.guide_Click);
             // 
             // HelpAbout
             // 
             this.HelpAbout.ImageLarge = ((System.Drawing.Image)(resources.GetObject("HelpAbout.ImageLarge")));
-            this.HelpAbout.TextLine1 = "About";
+            this.HelpAbout.TextLine1 = "Về chúng tôi";
             this.HelpAbout.Click += new System.EventHandler(this.about_Click);
             // 
             // RbBtnNew
@@ -717,7 +717,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1073, 660);
+            this.ClientSize = new System.Drawing.Size(1157, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
@@ -730,7 +730,7 @@
             this.MaximizeBox = false;
             this.Name = "MainProgress";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Graph";
+            this.Text = "Mô phỏng thuật toán lý thuyết đồ thị";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
