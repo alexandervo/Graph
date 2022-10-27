@@ -72,11 +72,11 @@
     </Compile>
     <Compile Include="Dijkstra.cs" />
     <Compile Include="FordBellman.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainProgress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainProgress.Designer.cs">
+      <DependentUpon>MainProgress.cs</DependentUpon>
     </Compile>
     <Compile Include="Guide.cs">
       <SubType>Form</SubType>
@@ -92,8 +92,8 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainProgress.resx">
+      <DependentUpon>MainProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guide.resx">
       <DependentUpon>Guide.cs</DependentUpon>

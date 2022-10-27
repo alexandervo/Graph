@@ -1,6 +1,6 @@
 ﻿namespace Graph
 {
-    partial class Form1
+    partial class MainProgress
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProgress));
             this.kryptonContextMenuItem1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
             this.kryptonContextMenuItem2 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
             this.kryptonContextMenuItem3 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
@@ -107,29 +107,6 @@
             this.SPAStep = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.SPAPath = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupSeparator4 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupSeparator();
-            this.TabDemo = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
-            this.RibbonDemoGrAlgo = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
-            this.RibbonGrDemoAlgo2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines();
-            this.rbDijkstra = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton();
-            this.dfs = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton();
-            this.bfs = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton();
-            this.RibbonDemoGrid = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
-            this.RibbonDemoGrGrid = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.Mazebtn = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.clearBtn = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.RibbonDemoRunMethod = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
-            this.RibbonGrDemoRun = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.stepBtn = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.animationBtn = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.realtimeBtn = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroupSeparator5 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupSeparator();
-            this.RibbonGrDemoRunType = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines();
-            this.diagonal = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupCheckBox();
-            this.arrow = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupCheckBox();
-            this.kryptonRibbonGroupSeparator6 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupSeparator();
-            this.RibbonDemoGrRunTime = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines();
-            this.DemoLbTime = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLabel();
-            this.slider = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTrackBar();
             this.TabHelp = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.RibbonHelp = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.RibbonGrHelp = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -217,12 +194,12 @@
             this.ctMenuStripMatrix.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyMatrixToClipboardToolStripMenuItem});
             this.ctMenuStripMatrix.Name = "ctMenuStripMatrix";
-            this.ctMenuStripMatrix.Size = new System.Drawing.Size(209, 26);
+            this.ctMenuStripMatrix.Size = new System.Drawing.Size(247, 28);
             // 
             // copyMatrixToClipboardToolStripMenuItem
             // 
             this.copyMatrixToClipboardToolStripMenuItem.Name = "copyMatrixToClipboardToolStripMenuItem";
-            this.copyMatrixToClipboardToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.copyMatrixToClipboardToolStripMenuItem.Size = new System.Drawing.Size(246, 24);
             this.copyMatrixToClipboardToolStripMenuItem.Text = "Copy Matrix to Clipboard";
             this.copyMatrixToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyMatrixToClipboardToolStripMenuItem_Click);
             // 
@@ -259,26 +236,26 @@
             this.updateToolStripMenuItem,
             this.copyGraphImageInClipboardToolStripMenuItem});
             this.ctMenustripGrapView.Name = "ctMenustripGrapView";
-            this.ctMenustripGrapView.Size = new System.Drawing.Size(261, 70);
+            this.ctMenustripGrapView.Size = new System.Drawing.Size(314, 76);
             // 
             // clearAllToolStripMenuItem
             // 
             this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(313, 24);
             this.clearAllToolStripMenuItem.Text = "Clear all";
             this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(313, 24);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // copyGraphImageInClipboardToolStripMenuItem
             // 
             this.copyGraphImageInClipboardToolStripMenuItem.Name = "copyGraphImageInClipboardToolStripMenuItem";
-            this.copyGraphImageInClipboardToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.copyGraphImageInClipboardToolStripMenuItem.Size = new System.Drawing.Size(313, 24);
             this.copyGraphImageInClipboardToolStripMenuItem.Text = "Copy Graph image to the clipboard";
             this.copyGraphImageInClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyGraphImageInClipboardToolStripMenuItem_Click);
             // 
@@ -404,10 +381,10 @@
             this.kryptonRibbon.RibbonTabs.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab[] {
             this.TabHome,
             this.TabSPA,
-            this.TabDemo,
             this.TabHelp});
+            this.kryptonRibbon.SelectedContext = null;
             this.kryptonRibbon.SelectedTab = this.TabHome;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1034, 115);
+            this.kryptonRibbon.Size = new System.Drawing.Size(1052, 135);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -648,7 +625,7 @@
             // 
             this.cbStartPoint.DropDownWidth = 121;
             this.cbStartPoint.FormattingEnabled = false;
-            this.cbStartPoint.ItemHeight = 15;
+            this.cbStartPoint.ItemHeight = 19;
             this.cbStartPoint.MaximumSize = new System.Drawing.Size(50, 0);
             this.cbStartPoint.MinimumSize = new System.Drawing.Size(50, 0);
             this.cbStartPoint.Text = "";
@@ -657,7 +634,7 @@
             // 
             this.cbEndPoint.DropDownWidth = 121;
             this.cbEndPoint.FormattingEnabled = false;
-            this.cbEndPoint.ItemHeight = 15;
+            this.cbEndPoint.ItemHeight = 19;
             this.cbEndPoint.Items.AddRange(new object[] {
             "All"});
             this.cbEndPoint.MaximumSize = new System.Drawing.Size(50, 0);
@@ -692,144 +669,6 @@
             this.SPAPath.ImageLarge = ((System.Drawing.Image)(resources.GetObject("SPAPath.ImageLarge")));
             this.SPAPath.TextLine1 = "Path";
             this.SPAPath.Click += new System.EventHandler(this.btnRunAll_Click);
-            // 
-            // TabDemo
-            // 
-            this.TabDemo.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
-            this.RibbonDemoGrAlgo,
-            this.RibbonDemoGrid,
-            this.RibbonDemoRunMethod});
-            this.TabDemo.Text = "Maze";
-            // 
-            // RibbonDemoGrAlgo
-            // 
-            this.RibbonDemoGrAlgo.DialogBoxLauncher = false;
-            this.RibbonDemoGrAlgo.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.RibbonGrDemoAlgo2});
-            this.RibbonDemoGrAlgo.TextLine1 = "Algorithms";
-            // 
-            // RibbonGrDemoAlgo2
-            // 
-            this.RibbonGrDemoAlgo2.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.rbDijkstra,
-            this.dfs,
-            this.bfs});
-            this.RibbonGrDemoAlgo2.MinimumSize = ComponentFactory.Krypton.Ribbon.GroupItemSize.Large;
-            // 
-            // rbDijkstra
-            // 
-            this.rbDijkstra.TextLine1 = "Dijkstra";
-            // 
-            // dfs
-            // 
-            this.dfs.TextLine1 = "DFS";
-            // 
-            // bfs
-            // 
-            this.bfs.TextLine1 = "BFS";
-            // 
-            // RibbonDemoGrid
-            // 
-            this.RibbonDemoGrid.DialogBoxLauncher = false;
-            this.RibbonDemoGrid.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.RibbonDemoGrGrid});
-            this.RibbonDemoGrid.TextLine1 = "Grid";
-            // 
-            // RibbonDemoGrGrid
-            // 
-            this.RibbonDemoGrGrid.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.Mazebtn,
-            this.clearBtn});
-            // 
-            // Mazebtn
-            // 
-            this.Mazebtn.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
-            this.Mazebtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("Mazebtn.ImageLarge")));
-            this.Mazebtn.TextLine1 = "Maze";
-            this.Mazebtn.Click += new System.EventHandler(this.MazeButton_Click);
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
-            this.clearBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("clearBtn.ImageLarge")));
-            this.clearBtn.TextLine1 = "Clear";
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
-            // 
-            // RibbonDemoRunMethod
-            // 
-            this.RibbonDemoRunMethod.DialogBoxLauncher = false;
-            this.RibbonDemoRunMethod.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.RibbonGrDemoRun,
-            this.kryptonRibbonGroupSeparator5,
-            this.RibbonGrDemoRunType,
-            this.kryptonRibbonGroupSeparator6,
-            this.RibbonDemoGrRunTime});
-            this.RibbonDemoRunMethod.TextLine1 = "Run Method";
-            // 
-            // RibbonGrDemoRun
-            // 
-            this.RibbonGrDemoRun.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.stepBtn,
-            this.animationBtn,
-            this.realtimeBtn});
-            // 
-            // stepBtn
-            // 
-            this.stepBtn.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
-            this.stepBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("stepBtn.ImageLarge")));
-            this.stepBtn.TextLine1 = "Step-by-Step";
-            this.stepBtn.Click += new System.EventHandler(this.stepBtn_Click);
-            // 
-            // animationBtn
-            // 
-            this.animationBtn.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
-            this.animationBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("animationBtn.ImageLarge")));
-            this.animationBtn.TextLine1 = "Animation";
-            this.animationBtn.Click += new System.EventHandler(this.animationBtn_Click);
-            // 
-            // realtimeBtn
-            // 
-            this.realtimeBtn.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
-            this.realtimeBtn.ImageLarge = ((System.Drawing.Image)(resources.GetObject("realtimeBtn.ImageLarge")));
-            this.realtimeBtn.TextLine1 = "Path";
-            this.realtimeBtn.Click += new System.EventHandler(this.realtimeBtn_Click);
-            // 
-            // RibbonGrDemoRunType
-            // 
-            this.RibbonGrDemoRunType.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.diagonal,
-            this.arrow});
-            // 
-            // diagonal
-            // 
-            this.diagonal.TextLine1 = "Diagonal Movements";
-            // 
-            // arrow
-            // 
-            this.arrow.TextLine1 = "Arrow                 ";
-            // 
-            // RibbonDemoGrRunTime
-            // 
-            this.RibbonDemoGrRunTime.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.DemoLbTime,
-            this.slider});
-            // 
-            // DemoLbTime
-            // 
-            this.DemoLbTime.TextLine1 = "Timesleep(1-1000ms)";
-            // 
-            // slider
-            // 
-            this.slider.LargeChange = 50;
-            this.slider.Maximum = 1000;
-            this.slider.MaximumLength = 120;
-            this.slider.Minimum = 1;
-            this.slider.MinimumLength = 120;
-            this.slider.SmallChange = 10;
-            this.slider.Tag = "Timesleep";
-            this.slider.TickFrequency = 100;
-            this.slider.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-            this.slider.Value = 500;
             // 
             // TabHelp
             // 
@@ -870,16 +709,15 @@
             // 
             this.timer.Enabled = true;
             this.timer.Interval = 1;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // Form1
+            // MainProgress
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1051, 660);
+            this.ClientSize = new System.Drawing.Size(1073, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
@@ -890,10 +728,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainProgress";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Graph";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
@@ -977,32 +814,10 @@
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupSeparator kryptonRibbonGroupSeparator4;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton SPADijkstra;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton SPAFordBellman;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonTab TabDemo;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple RibbonGrNew;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton RbBtnNew;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple RibbonNewGraph;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton RibbonBtnNew;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonDemoGrAlgo;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines RibbonGrDemoAlgo2;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton dfs;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton bfs;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupRadioButton rbDijkstra;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonDemoGrid;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple RibbonDemoGrGrid;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton clearBtn;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonDemoRunMethod;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple RibbonGrDemoRun;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton realtimeBtn;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton stepBtn;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton animationBtn;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupSeparator kryptonRibbonGroupSeparator5;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines RibbonGrDemoRunType;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupCheckBox diagonal;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupCheckBox arrow;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLines RibbonDemoGrRunTime;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTrackBar slider;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupLabel DemoLbTime;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupSeparator kryptonRibbonGroupSeparator6;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonTab TabHelp;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonHelp;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple RibbonGrHelp;
@@ -1026,7 +841,6 @@
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple2;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btnRefresh;
         private System.Windows.Forms.Timer timer;
-        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton Mazebtn;
     }
 }
 

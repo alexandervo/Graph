@@ -9,7 +9,7 @@ namespace Graph
     {
         MyGraphic myGraphic = new MyGraphic();
 
-        public void DijkstraSimple(ListView lv, ListView lvtable, int n, int s, int e, out bool isPath, RichTextBox txb, List<Point> pt, List<Form1.Segment> segment, List<Form1.Segment> tmp, List<int> _segment, List<List<Form1.Segment>> Segment_Review, bool undirected)
+        public void DijkstraSimple(ListView lv, ListView lvtable, int n, int s, int e, out bool isPath, RichTextBox txb, List<Point> pt, List<MainProgress.Segment> segment, List<MainProgress.Segment> tmp, List<int> _segment, List<List<MainProgress.Segment>> Segment_Review, bool undirected)
         {
             tmp.Clear();
             txb.Clear();
@@ -57,7 +57,7 @@ namespace Graph
 
                 item.SubItems[v].Text = "-";
 
-                List<Form1.Segment> segment_load = new List<Form1.Segment>();
+                List<MainProgress.Segment> segment_load = new List<MainProgress.Segment>();
 
                 for (int i = 0; i < n - 1; ++i)
                 {
@@ -119,14 +119,14 @@ namespace Graph
                 txb.Text += "Shortest Path [" + (s + 1).ToString() + "->" + (e + 1).ToString() + "] : ";
                 for (int i = roads.Count - 1; i > 0; --i)
                 {
-                    tmp.Add(new Form1.Segment(roads[i], roads[i - 1], checkIndexWidth(segment, roads[i], roads[i - 1], undirected)));
+                    tmp.Add(new MainProgress.Segment(roads[i], roads[i - 1], checkIndexWidth(segment, roads[i], roads[i - 1], undirected)));
                     txb.Text += (roads[i] + 1).ToString() + " --> ";
                 }
                 txb.Text += (roads[0] + 1).ToString() + "\n Cost: " + length[e].ToString();
             }
         }
 
-        public void DijkstraAll(ListView lv, ListView lvtable, int n, int s, out bool isPath, RichTextBox txb, List<Point> pt, List<Form1.Segment> segment, List<Form1.Segment> tmp, bool undirected)
+        public void DijkstraAll(ListView lv, ListView lvtable, int n, int s, out bool isPath, RichTextBox txb, List<Point> pt, List<MainProgress.Segment> segment, List<MainProgress.Segment> tmp, bool undirected)
         {
             tmp.Clear();
             txb.Clear();
@@ -234,7 +234,7 @@ namespace Graph
                             txb.Text += "Shortest Path [" + (s + 1).ToString() + "->" + (i + 1).ToString() + "] : ";
                             for (int j = roads.Count - 1; j > 0; --j)
                             {
-                                tmp.Add(new Form1.Segment(roads[j], roads[j - 1], checkIndexWidth(segment, roads[j], roads[j - 1], undirected)));
+                                tmp.Add(new MainProgress.Segment(roads[j], roads[j - 1], checkIndexWidth(segment, roads[j], roads[j - 1], undirected)));
                                 txb.Text += (roads[j] + 1).ToString() + " --> ";
                             }
                             txb.Text += (roads[0] + 1).ToString() + "\n Cost: " + length[i].ToString() + "\n";
@@ -248,16 +248,16 @@ namespace Graph
             }
         }
         
-        public string checkIndexWidth(List<Form1.Segment> segment, int s, int e, bool undirected)
+        public string checkIndexWidth(List<MainProgress.Segment> segment, int s, int e, bool undirected)
         {
             if(undirected)
             {
-                foreach (Form1.Segment i in segment)
+                foreach (MainProgress.Segment i in segment)
                     if ((i.S == s && i.E == e) || (i.E == s && i.S == e)) return i.W;
             }
             else
             {
-                foreach (Form1.Segment i in segment)
+                foreach (MainProgress.Segment i in segment)
                     if (i.S == s && i.E == e) return i.W;
             }
             

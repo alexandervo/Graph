@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using System.Text;
-using System.ComponentModel;
-using ComponentFactory.Krypton.Ribbon;
 using ComponentFactory.Krypton.Toolkit;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Graph
 {
-    public partial class Form1 : KryptonForm
+    public partial class MainProgress : KryptonForm
     {
         #region Variables
 
@@ -122,7 +119,7 @@ namespace Graph
         }
         #endregion
 
-        public Form1()
+        public MainProgress()
         {
 
             InitializeComponent();
@@ -131,8 +128,6 @@ namespace Graph
             MakeBackgroundGrid();
             rbtnUnDirected.Checked = true;
             SPADijkstra.Checked = true;
-            dfs.Checked = true;
-            rbDijkstra.Checked = true;
             this.Enabled = true;
             Control.CheckForIllegalCrossThreadCalls = false;
         }
@@ -143,79 +138,6 @@ namespace Graph
             row = (cur_Y - 160) / squareSize;
             col = (cur_X - 250) / squareSize;
             return new Cell(row, col);
-        }
-
-        private Point getPoint(Cell X)
-        {
-            Point Y = new Point();
-            Y.X = X.row;
-            Y.Y = X.col;
-            return Y;
-        }
-
-        private Point[] CalcSquare(int r, int c)
-        {
-            Point[] polygon = {
-                new Point((int)(251 +     c*squareSize + 0), (int)(161 +     r*squareSize + 0)),
-                new Point((int)(251 + (c+1)*squareSize - 1), (int)(161 +     r*squareSize + 0)),
-                new Point((int)(251 + (c+1)*squareSize - 1), (int)(161 + (r+1)*squareSize - 1)),
-                new Point((int)(251 +     c*squareSize + 0), (int)(161 + (r+1)*squareSize - 1))
-            };
-            return polygon;
-        }
-
-        private void MainForm_Paint(object sender, PaintEventArgs e)
-        {
-
-            Graphics g = e.Graphics;
-            Brush brush;
-            brush = new SolidBrush(Color.DarkGray);
-
-            g.FillRectangle(brush, new Rectangle(250, 160, columns * squareSize + 1, rows * squareSize + 1));
-
-            brush.Dispose();
-
-            grid[Start.row, Start.col] = ROBOT;
-            grid[Target.row, Target.col] = TARGET;
-
-            for (int r = 0; r < rows; r++)
-                for (int c = 0; c < columns; c++)
-                {
-                    if (grid[r, c] == EMPTY)
-                        brush = new SolidBrush(Color.White);
-                    else if (grid[r, c] == ROBOT)
-                        brush = new SolidBrush(Color.Red);
-                    else if (grid[r, c] == TARGET)
-                        brush = new SolidBrush(Color.Green);
-                    else if (grid[r, c] == OBST)
-                        brush = new SolidBrush(Color.Black);
-                    else if (grid[r, c] == RUNNING)
-                        brush = new SolidBrush(Color.BlueViolet);
-                    else if (grid[r, c] == CLOSED)
-                        brush = new SolidBrush(Color.Cyan);
-                    else if (grid[r, c] == PATH)
-                        brush = new SolidBrush(Color.Yellow);
-
-                    g.FillPolygon(brush, CalcSquare(r, c));
-
-                    brush.Dispose();
-                }
-            if (arrow.Checked)
-            {
-                for (int i = 0; i < rows; i++)
-                    for (int j = 0; j < columns; j++)
-                    {
-                        if (par[i, j].X == -1 || par[i, j].Y == -1) continue;
-                        Pen P = new Pen(Color.Black, 2);
-                        P.StartCap = System.Drawing.Drawing2D.LineCap.NoAnchor;
-                        P.CustomEndCap = new System.Drawing.Drawing2D.AdjustableArrowCap(4, 8, true);
-                        Point startPoint = centers[i, j];
-                        Point endPoint = new Point(centers[par[i, j].X, par[i, j].Y].X, centers[par[i, j].X, par[i, j].Y].Y);
-                        g.DrawLine(P, startPoint, endPoint);
-                        brush.Dispose();
-                    }
-            }
-
         }
 
         private void FillGrid()
@@ -297,35 +219,7 @@ namespace Graph
             Invalidate();
         }
 
-        private void CreateMaze()
-        {
-            panelControl.Visible = false;
-            realTime = false;
-            found = false;
-            searching = false;
-            endOfSearch = false;
-            animation = false;
-
-            grid = new int[rows, columns];
-            centers = new Point[rows, columns];
-            par = new Point[rows, columns];
-            for (int r = 0; r < rows; r++)
-                for (int c = 0; c < columns; c++)
-                {
-                    centers[r, c] = new Point(250 + c * squareSize + squareSize / 2, 160 + r * squareSize + squareSize / 2);
-                    par[r, c] = new Point(-1, -1);
-                }
-
-            FillGrid();
-
-            var maze = new Maze(rows / 2, columns / 2);
-            for (int r = 0; r < rows; r++)
-                for (int c = 0; c < columns; c++)
-                    if (Regex.IsMatch(maze.maze_str.Substring(r * columns + c, 1), "[+-|]"))
-                        grid[r, c] = OBST;
-
-            Invalidate();
-        }
+       
 
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
@@ -355,8 +249,6 @@ namespace Graph
                     if (cur_val == OBST) grid[row, col] = EMPTY;
                 }
             }
-
-            if (realTime) RealTime_Action();
 
             Invalidate();
 
@@ -412,401 +304,11 @@ namespace Graph
                         grid[row, col] = OBST;
                 }
 
-
-                if (realTime)
-                    RealTime_Action();
-
                 Invalidate();
 
             }
         }
 
-
-        private void EnableRadiosAndChecks()
-        {
-            slider.Enabled = true;
-            dfs.Enabled = true;
-            bfs.Enabled = true;
-            rbDijkstra.Enabled = true;
-            diagonal.Enabled = true;
-            arrow.Enabled = true;
-
-        }
-
-        private void DisableRadiosAndChecks()
-        {
-            slider.Enabled = false;
-            dfs.Enabled = false;
-            bfs.Enabled = false;
-            rbDijkstra.Enabled = false;
-            diagonal.Enabled = false;
-            arrow.Enabled = false;
-        }
-
-        private void newBtn_Click(object sender, EventArgs e)
-        {
-            clearBtn.Checked = false;
-            Mazebtn.Checked = false;
-            realtimeBtn.Checked = false;
-            stepBtn.Checked = false;
-            animationBtn.Checked = false;
-
-            animation = false;
-            realTime = false;
-            realtimeBtn.Enabled = true;
-            animationBtn.Enabled = true;
-            stepBtn.Enabled = true;
-            EnableRadiosAndChecks();
-            NewGrid();
-        }
-
-
-        private void clearBtn_Click(object sender, EventArgs e)
-        {
-            clearBtn.Checked = true;
-            Mazebtn.Checked = false;
-            realtimeBtn.Checked = false;
-            stepBtn.Checked = false;
-            animationBtn.Checked = false;
-
-            animation = false;
-            realTime = false;
-            realtimeBtn.Enabled = true;
-            stepBtn.Enabled = true;
-            animationBtn.Enabled = true;
-            EnableRadiosAndChecks();
-
-            FillGrid();
-
-            Invalidate();
-        }
-
-
-        private void MazeButton_Click(object sender, EventArgs e)
-        {
-            clearBtn.Checked = false;
-            Mazebtn.Checked = true;
-            realtimeBtn.Checked = false;
-            stepBtn.Checked = false;
-            animationBtn.Checked = false;
-
-            animation = false;
-            realTime = false;
-            panelControl.Visible = false;
-            realTime = false;
-            found = false;
-            searching = false;
-            endOfSearch = false;
-            EnableRadiosAndChecks();
-            CreateMaze();
-        }
-
-        private void RealTime_Action()
-        {
-            do
-                SearchAndCheck();
-            while (!endOfSearch);
-        }
-
-        private void realtimeBtn_Click(object sender, EventArgs e)
-        {
-            clearBtn.Checked = false;
-            Mazebtn.Checked = false;
-            realtimeBtn.Checked = true;
-            stepBtn.Checked = false;
-            animationBtn.Checked = false;
-
-            if (realTime) return;
-
-            realTime = true;
-            searching = true;
-            DisableRadiosAndChecks();
-            stepBtn.Enabled = false;
-            animationBtn.Enabled = false;
-            timer.Stop();
-
-            RealTime_Action();
-        }
-
-        private void stepBtn_Click(object sender, EventArgs e)
-        {
-            clearBtn.Checked = false;
-            Mazebtn.Checked = false;
-            realtimeBtn.Checked = false;
-            stepBtn.Checked = true;
-            animationBtn.Checked = false;
-
-            animation = false;
-            timer.Stop();
-            if (found || endOfSearch) return;
-            searching = true;
-
-            DisableRadiosAndChecks();
-            slider.Enabled = true;
-
-            SearchAndCheck();
-            Invalidate();
-
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            Animation_action();
-        }
-
-        private void Animation_action()
-        {
-            if (animation)
-            {
-                SearchAndCheck();
-                Invalidate();
-                if (endOfSearch)
-                {
-                    animation = false;
-                    timer.Stop();
-                }
-            }
-        }
-
-
-        private void animationBtn_Click(object sender, EventArgs e)
-        {
-            clearBtn.Checked = false;
-            Mazebtn.Checked = false;
-            realtimeBtn.Checked = false;
-            stepBtn.Checked = false;
-            animationBtn.Checked = true;
-
-            animation = true;
-            searching = true;
-            DisableRadiosAndChecks();
-            slider.Enabled = true;
-
-
-            delay = slider.Value;
-            timer.Stop();
-            timer.Interval = delay;
-            timer.Start();
-
-            Animation_action();
-        }
-
-        private void SearchAndCheck()
-        {
-            if (openSet.Count == 0 || endOfSearch)
-            {
-                Invalidate();
-            }
-            else
-            {
-                ExpandNode();
-                if (found)
-                {
-                    endOfSearch = true;
-                    Path();
-                    Invalidate();
-                }
-            }
-        }
-
-        private void ExpandNode()
-        {
-            if (rbDijkstra.Checked) dijkstraAlgorithm();
-            if (bfs.Checked) bfsAlgorithm();
-            if (dfs.Checked) dfsAlgorithm();
-        }
-
-
-        private bool checkCell(Cell a)
-        {
-            if (a.row >= 0 && a.row < rows && a.col >= 0 && a.col < columns && grid[a.row, a.col] != OBST) return true;
-            return false;
-        }
-
-        private double calDist(Cell a, Cell b)
-        {
-            double x = centers[a.row, a.col].X - centers[b.row, b.col].X;
-            double y = centers[a.row, a.col].Y - centers[b.row, b.col].Y;
-            if (diagonal.Checked) return Math.Sqrt(x * x + y * y);
-            else return Math.Abs(x) + Math.Abs(y);
-        }
-
-        private bool checkInOP(Cell a)
-        {
-            foreach (Cell i in openSet)
-            {
-                if (a.col == i.col && a.row == i.row) return true;
-            }
-            return false;
-        }
-
-        private bool checkInCL(Cell a)
-        {
-            foreach (Cell i in closedSet)
-            {
-                if (a.col == i.col && a.row == i.row) return true;
-            }
-            return false;
-        }
-
-        private void dijkstraAlgorithm()
-        {
-            if (openSet.Count == 0)
-            {
-                endOfSearch = true;
-                return;
-            }
-
-            openSet.Sort((x, y) =>
-            {
-                int result = x.d.CompareTo(y.d);
-                if (result == 0)
-                    result = x.level.CompareTo(y.level);
-                return result;
-            });
-
-            Cell u = openSet[0];
-            openSet.RemoveAt(0);
-
-            if (u.d == oo)
-            {
-                endOfSearch = true;
-                return;
-            }
-
-            grid[u.row, u.col] = CLOSED;
-
-            closedSet.Add(u);
-
-            if (u.row == Target.row && u.col == Target.col)
-            {
-                found = true;
-                endOfSearch = true;
-                grid[u.row, u.col] = TARGET;
-                return;
-            }
-
-            int count = diagonal.Checked == true ? 8 : 4;
-
-            for (int i = 0; i < count; i++)
-
-                for (int k = 0; k < openSet.Count; k++)
-                {
-                    if (!((u.row + dx[i]) == openSet[k].row && (u.col + dy[i]) == openSet[k].col) || !checkCell(openSet[k])) continue;
-
-                    double tmp = u.d + calDist(u, openSet[k]);
-                    if (tmp < openSet[k].d)
-                    {
-                        openSet[k].d = tmp;
-                        openSet[k].prev = u;
-                        par[openSet[k].row, openSet[k].col] = new Point(u.row, u.col);
-                        grid[openSet[k].row, openSet[k].col] = RUNNING;
-                    }
-                }
-        }
-
-        private void bfsAlgorithm()
-        {
-            if (closedSet.Count == 0)
-            {
-                openSet.Clear();
-                openSet.Add(new Cell(Start.row, Start.col));
-            }
-
-            if (openSet.Count == 0)
-            {
-                endOfSearch = true;
-                return;
-            }
-
-            Cell u = openSet[0];
-            openSet.RemoveAt(0);
-
-            grid[u.row, u.col] = CLOSED;
-
-            closedSet.Add(u);
-
-            if (u.row == Target.row && u.col == Target.col)
-            {
-                found = true;
-                endOfSearch = true;
-                grid[u.row, u.col] = TARGET;
-                return;
-            }
-
-            int count = diagonal.Checked == true ? 8 : 4;
-
-            for (int i = 0; i < count; i++)
-            {
-                Cell cur = new Cell(u.row + dx[i], u.col + dy[i]);
-                if (checkInOP(cur) || checkInCL(cur) || !checkCell(cur)) continue;
-                else
-                {
-                    openSet.Add(cur);
-                    par[cur.row, cur.col] = new Point(u.row, u.col);
-                    grid[cur.row, cur.col] = RUNNING;
-                }
-            }
-        }
-
-        private void dfsAlgorithm()
-        {
-            if (closedSet.Count == 0)
-            {
-                openSet.Clear();
-                openSet.Add(new Cell(Start.row, Start.col));
-            }
-
-            while (openSet.Count > 0 && checkInCL(openSet[0])) openSet.RemoveAt(0);
-
-            if (openSet.Count == 0)
-            {
-                endOfSearch = true;
-                return;
-            }
-
-            Cell u = openSet[0];
-            openSet.RemoveAt(0);
-
-            grid[u.row, u.col] = CLOSED;
-
-            closedSet.Add(u);
-
-            if (u.row == Target.row && u.col == Target.col)
-            {
-                found = true;
-                endOfSearch = true;
-                grid[u.row, u.col] = TARGET;
-                return;
-            }
-
-            int count = diagonal.Checked == true ? 8 : 4;
-
-            for (int i = 0; i < count; i++)
-            {
-                Cell cur = new Cell(u.row + dx[i], u.col + dy[i]);
-                if (checkInCL(cur) || !checkCell(cur)) continue;
-                else
-                {
-                    openSet.Insert(0, cur);
-                    par[cur.row, cur.col] = new Point(u.row, u.col);
-                    grid[cur.row, cur.col] = RUNNING;
-                }
-            }
-        }
-
-        private void Path()
-        {
-            if (!found) return;
-            Point Cur = new Point(Target.row, Target.col);
-            while (Cur.X != -1 && Cur.Y != -1)
-            {
-                grid[Cur.X, Cur.Y] = PATH;
-                Cur = par[Cur.X, Cur.Y];
-            }
-            grid[Target.row, Target.col] = TARGET;
-
-        }
 
         #region Menustrip
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1288,10 +790,6 @@ namespace Graph
             RestNew();
         }
 
-        private void TabDemo_Click(object sender, EventArgs e)
-        {
-            panelControl.Visible = false;
-        }
 
         #region OpenSave
         private void Save()
@@ -1328,11 +826,6 @@ namespace Graph
         }
 
         private void btnOpenGraph_Click(object sender, EventArgs e)
-        {
-            Open();
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Open();
         }
@@ -1565,120 +1058,5 @@ namespace Graph
             return Color.FromArgb(color.A, (int)red, (int)green, (int)blue);
         }
 
-    }
-
-
-
-    /// <summary>
-    /// The following code creates a random, perfect (without cycles) maze
-    /// 
-    /// From http://rosettacode.org/wiki/Maze_generation
-    /// </summary>
-    public static class Extensions
-    {
-        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, Random rng)
-        {
-            var e = source.ToArray();
-            for (var i = e.Length - 1; i >= 0; i--)
-            {
-                var swapIndex = rng.Next(i + 1);
-                yield return e[swapIndex];
-                e[swapIndex] = e[i];
-            }
-        }
-
-        public static CellState OppositeWall(this CellState orig)
-        {
-            return (CellState)(((int)orig >> 2) | ((int)orig << 2)) & CellState.Initial;
-        }
-
-        public static bool HasFlag(this CellState cs, CellState flag)
-        {
-            return ((int)cs & (int)flag) != 0;
-        }
-    }
-
-    [Flags]
-    public enum CellState
-    {
-        Top = 1,
-        Right = 2,
-        Bottom = 4,
-        Left = 8,
-        Visited = 128,
-        Initial = Top | Right | Bottom | Left,
-    }
-
-    public struct RemoveWallAction
-    {
-        public Point Neighbour;
-        public CellState Wall;
-    }
-
-    public class Maze
-    {
-        private readonly CellState[,] _cells;
-        private readonly int _width;
-        private readonly int _height;
-        private readonly Random _rng;
-        public String maze_str = "";
-
-        public Maze(int width, int height)
-        {
-            _width = width;
-            _height = height;
-            _cells = new CellState[width, height];
-            for (var x = 0; x < width; x++)
-                for (var y = 0; y < height; y++)
-                    _cells[x, y] = CellState.Initial;
-            _rng = new Random();
-            VisitCell(_rng.Next(width), _rng.Next(height));
-            make_string();
-        }
-
-        public CellState this[int x, int y]
-        {
-            get { return _cells[x, y]; }
-            set { _cells[x, y] = value; }
-        }
-
-        public IEnumerable<RemoveWallAction> GetNeighbours(Point p)
-        {
-            if (p.X > 0) yield return new RemoveWallAction { Neighbour = new Point(p.X - 1, p.Y), Wall = CellState.Left };
-            if (p.Y > 0) yield return new RemoveWallAction { Neighbour = new Point(p.X, p.Y - 1), Wall = CellState.Top };
-            if (p.X < _width - 1) yield return new RemoveWallAction { Neighbour = new Point(p.X + 1, p.Y), Wall = CellState.Right };
-            if (p.Y < _height - 1) yield return new RemoveWallAction { Neighbour = new Point(p.X, p.Y + 1), Wall = CellState.Bottom };
-        }
-
-        public void VisitCell(int x, int y)
-        {
-            this[x, y] |= CellState.Visited;
-            foreach (var p in GetNeighbours(new Point(x, y)).Shuffle(_rng).Where(z => !(this[z.Neighbour.X, z.Neighbour.Y].HasFlag(CellState.Visited))))
-            {
-                this[x, y] -= p.Wall;
-                this[p.Neighbour.X, p.Neighbour.Y] -= p.Wall.OppositeWall();
-                VisitCell(p.Neighbour.X, p.Neighbour.Y);
-            }
-        }
-
-        public void make_string()
-        {
-            var firstLine = string.Empty;
-            for (var y = 0; y < _height; y++)
-            {
-                var sbTop = new StringBuilder();
-                var sbMid = new StringBuilder();
-                for (var x = 0; x < _width; x++)
-                {
-                    sbTop.Append(this[x, y].HasFlag(CellState.Top) ? "+-" : "+ ");
-                    sbMid.Append(this[x, y].HasFlag(CellState.Left) ? "| " : "  ");
-                }
-                if (firstLine == string.Empty)
-                    firstLine = sbTop.ToString();
-                maze_str = maze_str + sbTop + "+";
-                maze_str = maze_str + sbMid + "|";
-            }
-            maze_str = maze_str + firstLine + "+";
-        }
     }
 }

@@ -8,7 +8,7 @@ namespace Graph
 {
     public class MyGraph
     {
-        public void SaveGraph(List<Point> pt, List<Form1.Segment> segment, bool directed, string path)
+        public void SaveGraph(List<Point> pt, List<MainProgress.Segment> segment, bool directed, string path)
         {
             string graph = "";
             for(int i = 0; i < pt.Count; ++i)
@@ -20,7 +20,7 @@ namespace Graph
             File.WriteAllText(path, graph);
         }
 
-        public void ReadGraph(List<Point> pt, List<Form1.Segment> segment, ListView lv, Color color, KryptonRibbonGroupRadioButton rbtn1, KryptonRibbonGroupRadioButton rbtn2, KryptonRibbonGroupComboBox cbs, KryptonRibbonGroupComboBox cbe, out int i, string path)
+        public void ReadGraph(List<Point> pt, List<MainProgress.Segment> segment, ListView lv, Color color, KryptonRibbonGroupRadioButton rbtn1, KryptonRibbonGroupRadioButton rbtn2, KryptonRibbonGroupComboBox cbs, KryptonRibbonGroupComboBox cbe, out int i, string path)
         {
             pt.Clear();
             lv.Clear();
@@ -63,7 +63,7 @@ namespace Graph
                     {
                         int a = int.Parse(_tmp[0]);
                         int b = int.Parse(_tmp[1]);
-                        segment.Add(new Form1.Segment(a, b, _tmp[2]));
+                        segment.Add(new MainProgress.Segment(a, b, _tmp[2]));
                         MatrixAdd(lv, a, b, rbtn2.Checked, _tmp[2]);
                     }
 

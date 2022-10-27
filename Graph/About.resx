@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Chương trình biểu diễn thuật toán Dijkstra và Ford-Bellman trên đơn đồ thị vô hướng và có hướng
+
+Người thực hiện:
+- Nguyễn Đức Ân
+- Nguyễn Trần Ánh Linh
+- Nguyễn Phước Thinh
+- Võ Kiến Phú
+- Lương Thị Cẩm Tiên
+</value>
+  </data>
 </root>
