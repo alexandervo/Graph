@@ -382,8 +382,9 @@
             this.TabHome,
             this.TabSPA,
             this.TabHelp});
+            this.kryptonRibbon.SelectedContext = null;
             this.kryptonRibbon.SelectedTab = this.TabSPA;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1242, 115);
+            this.kryptonRibbon.Size = new System.Drawing.Size(1276, 115);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -716,7 +717,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1259, 660);
+            this.ClientSize = new System.Drawing.Size(1293, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
