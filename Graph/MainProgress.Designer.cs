@@ -382,8 +382,8 @@
             this.TabHome,
             this.TabSPA,
             this.TabHelp});
-            this.kryptonRibbon.SelectedTab = this.TabHelp;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1174, 115);
+            this.kryptonRibbon.SelectedTab = this.TabSPA;
+            this.kryptonRibbon.Size = new System.Drawing.Size(1242, 115);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -716,7 +716,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1191, 660);
+            this.ClientSize = new System.Drawing.Size(1259, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
@@ -764,7 +764,6 @@
         private System.Windows.Forms.Panel pnlGraph;
         private System.Windows.Forms.OpenFileDialog MyOpenFileDialog;
         private System.Windows.Forms.SaveFileDialog MySaveFileDialog;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.SaveFileDialog SaveFileDialogImage;
         private System.Windows.Forms.ColorDialog MyColorDialog;

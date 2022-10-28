@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+#pragma warning disable IDE1006 // Naming Styles
 
 namespace Graph
 {
@@ -37,8 +38,6 @@ namespace Graph
         bool found = false;
         bool searching = false;
         bool endOfSearch = false;
-        bool animation = false;
-        int delay;
 
         bool mouse_down = false;
         int cur_row, cur_col, cur_val;
@@ -198,7 +197,6 @@ namespace Graph
             found = false;
             searching = false;
             endOfSearch = false;
-            animation = false;
 
             grid = new int[rows, columns];
             centers = new Point[rows, columns];
@@ -417,6 +415,7 @@ namespace Graph
                 if (picGraphView.Cursor != my_cursor) picGraphView.Cursor = my_cursor;
             }
         }
+
 
         private void picGraphView_MouseDown(object sender, MouseEventArgs e)
         {
