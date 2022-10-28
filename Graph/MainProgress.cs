@@ -525,7 +525,6 @@ namespace Graph
             int segment_num;
             if (FindDistanceToPointSquared(e.Location, hit_pt) > over_squared && MouseIsOverEndPoint(e.Location, out segment_num, out hit_pt))
             {
-            start:
                 string value = "";
                 if (InputGraph.InputBox("Input", "Enter Input", ref value) == DialogResult.OK)
                 {
@@ -540,7 +539,6 @@ namespace Graph
                     else
                     {
                         MessageBox.Show("Input isn't correct", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        goto start;
                     }
                 }
                 picGraphView_MouseUp_Drawing(sender, e);
@@ -901,7 +899,7 @@ namespace Graph
                 if (weightNeg && SPADijkstra.Checked)
                 {
                     MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    
                 }
                 else
                 {
