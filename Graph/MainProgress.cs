@@ -233,18 +233,15 @@ namespace Graph
             int col = cur_cell.col;
 
 
-            if (row >= 0 && row < rows && col >= 0 && col < columns)
+            if (row >= 0 && row < rows && col >= 0 && col < columns && (realTime ? true : !found && !searching))
             {
-                if (realTime ? true : !found && !searching)
-                {
-                    if (realTime)
-                        FillGrid();
-                    cur_row = row;
-                    cur_col = col;
-                    cur_val = grid[row, col];
-                    if (cur_val == EMPTY) grid[row, col] = OBST;
-                    if (cur_val == OBST) grid[row, col] = EMPTY;
-                }
+                if (realTime)
+                    FillGrid();
+                cur_row = row;
+                cur_col = col;
+                cur_val = grid[row, col];
+                if (cur_val == EMPTY) grid[row, col] = OBST;
+                if (cur_val == OBST) grid[row, col] = EMPTY;
             }
 
             Invalidate();
@@ -608,20 +605,17 @@ namespace Graph
                     myGraphic.DrawPoint(e.Graphics, Pt[i], (i + 1).ToString(), 5, Brushes.Yellow, this.Font);
             }
 
-            if (segment_dijkstra_save_tmp.Count == 0)
+            if (segment_dijkstra_save_tmp.Count == 0 && segment_dijkstra.Count != 0)
             {
-                if (segment_dijkstra.Count != 0)
-                {
-                    int temp;
-                    foreach (Segment i in segment_dijkstra)
-                        if (!checkindexSimpleDirect(i.E, i.S, out temp) && !checkindexSimpleDirect(i.S, i.E, out temp)) myGraphic.DrawCurve(e.Graphics, Pt[i.S], Pt[i.E], i.W, this.Font, Brushes.Red, 4, rbtnDirected.Checked);
-                        else myGraphic.DrawLine(e.Graphics, Pt[i.S], Pt[i.E], i.W, this.Font, Brushes.Red, 4, rbtnDirected.Checked);
+                int temp;
+                foreach (Segment i in segment_dijkstra)
+                    if (!checkindexSimpleDirect(i.E, i.S, out temp) && !checkindexSimpleDirect(i.S, i.E, out temp)) myGraphic.DrawCurve(e.Graphics, Pt[i.S], Pt[i.E], i.W, this.Font, Brushes.Red, 4, rbtnDirected.Checked);
+                    else myGraphic.DrawLine(e.Graphics, Pt[i.S], Pt[i.E], i.W, this.Font, Brushes.Red, 4, rbtnDirected.Checked);
 
-                    foreach (Segment i in segment_dijkstra)
-                    {
-                        myGraphic.DrawPoint(e.Graphics, Pt[i.S], (i.S + 1).ToString(), 5, Brushes.Yellow, this.Font);
-                        myGraphic.DrawPoint(e.Graphics, Pt[i.E], (i.E + 1).ToString(), 5, Brushes.Yellow, this.Font);
-                    }
+                foreach (Segment i in segment_dijkstra)
+                {
+                    myGraphic.DrawPoint(e.Graphics, Pt[i.S], (i.S + 1).ToString(), 5, Brushes.Yellow, this.Font);
+                    myGraphic.DrawPoint(e.Graphics, Pt[i.E], (i.E + 1).ToString(), 5, Brushes.Yellow, this.Font);
                 }
             }
 
@@ -958,14 +952,11 @@ namespace Graph
 
             if (isPaths)
             {
-                if (!dijkstra_step)
+                if (!dijkstra_step && segment_dijkstra_Review_tmp.Count != 0)
                 {
-                    if (segment_dijkstra_Review_tmp.Count != 0)
-                    {
-                        segment_dijkstra_Review.Clear();
-                        segment_dijkstra_Review.Add(segment_dijkstra_Review_tmp[0]);
-                        segment_dijkstra_Review_tmp.RemoveAt(0);
-                    }
+                    segment_dijkstra_Review.Clear();
+                    segment_dijkstra_Review.Add(segment_dijkstra_Review_tmp[0]);
+                    segment_dijkstra_Review_tmp.RemoveAt(0);
                 }
 
                 dijkstra_step = false;

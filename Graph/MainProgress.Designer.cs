@@ -382,7 +382,7 @@
             this.TabHome,
             this.TabSPA,
             this.TabHelp});
-            this.kryptonRibbon.SelectedTab = this.TabHome;
+            this.kryptonRibbon.SelectedTab = this.TabHelp;
             this.kryptonRibbon.Size = new System.Drawing.Size(1174, 115);
             this.kryptonRibbon.TabIndex = 24;
             // 
@@ -775,8 +775,6 @@
         private System.Windows.Forms.ToolStripMenuItem copyMatrixToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.PictureBox picGraphView;
-        private System.Windows.Forms.ToolStripMenuItem guideToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel panelControl;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonTab TabHome;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup RibbonFile;
