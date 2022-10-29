@@ -89,6 +89,7 @@
             this.RibbonBtnColor = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonGroupTriple2 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.btnRefresh = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroup1 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.TabSPA = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.RibbonSPAAlgorithms = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.RibbonGrAlgo = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -353,7 +354,7 @@
             this.gboxLogs.Size = new System.Drawing.Size(296, 178);
             this.gboxLogs.TabIndex = 3;
             this.gboxLogs.TabStop = false;
-            this.gboxLogs.Text = "Nhật ký";
+            this.gboxLogs.Text = "Nhật ký thông báo";
             // 
             // txbLogs
             // 
@@ -382,9 +383,8 @@
             this.TabHome,
             this.TabSPA,
             this.TabHelp});
-            this.kryptonRibbon.SelectedContext = null;
             this.kryptonRibbon.SelectedTab = this.TabHome;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1136, 135);
+            this.kryptonRibbon.Size = new System.Drawing.Size(1058, 135);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -393,7 +393,8 @@
             this.RibbonFile,
             this.RibbonGraphType,
             this.RibbonNew,
-            this.RibbonEdit});
+            this.RibbonEdit,
+            this.kryptonRibbonGroup1});
             this.TabHome.Text = "Các công cụ";
             // 
             // RibbonFile
@@ -535,6 +536,7 @@
             // 
             this.RibbonBtnMove.ButtonType = ComponentFactory.Krypton.Ribbon.GroupButtonType.Check;
             this.RibbonBtnMove.ImageLarge = ((System.Drawing.Image)(resources.GetObject("RibbonBtnMove.ImageLarge")));
+            this.RibbonBtnMove.ImageSmall = ((System.Drawing.Image)(resources.GetObject("RibbonBtnMove.ImageSmall")));
             this.RibbonBtnMove.TextLine1 = "Di chuyển đỉnh";
             this.RibbonBtnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
@@ -717,7 +719,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1157, 660);
+            this.ClientSize = new System.Drawing.Size(1079, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
@@ -841,6 +843,7 @@
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple2;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton btnRefresh;
         private System.Windows.Forms.Timer timer;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
     }
 }
 

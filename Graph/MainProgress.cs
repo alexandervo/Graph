@@ -527,7 +527,7 @@ namespace Graph
             {
             start:
                 string value = "";
-                if (InputGraph.InputBox("Input", "Enter Input", ref value) == DialogResult.OK)
+                if (InputGraph.InputBox("Nhập vào trọng số", "Nhập trọng số lẹ đi :)))", ref value) == DialogResult.OK)
                 {
                     if (int.TryParse(value, out int tmp))
                     {
@@ -539,7 +539,7 @@ namespace Graph
                     }
                     else
                     {
-                        MessageBox.Show("Input isn't correct", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nhập sai rùi má ơi :v", "Lỗi rùi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         goto start;
                     }
                 }
@@ -900,7 +900,7 @@ namespace Graph
             {
                 if (weightNeg && SPADijkstra.Checked)
                 {
-                    MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi rồi hihi!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else
@@ -919,7 +919,7 @@ namespace Graph
                             segment_dijkstra_save.Clear();
                             picGraphView.Invalidate();
                         }
-                        else MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else MessageBox.Show("Lỗi rồi hihi!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         if (SPAFordBellman.Checked)
                         {
@@ -930,12 +930,12 @@ namespace Graph
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi rồi hihi!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
-            else MessageBox.Show("Start point or End point isn't choose!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Chọn đỉnh bắt đầu và điểm cuối đi nè!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DijkstraStep()
@@ -984,13 +984,13 @@ namespace Graph
                     segment_dijkstra_save.Clear();
                     segment_dijkstra_Review.Clear();
                     picGraphView.Invalidate();
-                    MessageBox.Show("Done!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tuyệt!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dijkstra_step = true;
                 }
             }
             else
             {
-                MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi rồi hihi!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 segment_dijkstra_save.Clear();
                 segment_dijkstra_Review.Clear();
                 picGraphView.Invalidate();
@@ -1006,12 +1006,12 @@ namespace Graph
             SPAStep.Checked = true;
             if (weightNeg && SPADijkstra.Checked)
             {
-                MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi rồi hihi!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (SPAFordBellman.Checked)
             {
-                MessageBox.Show("Run step aren't available for Ford-Bellman Algorithms", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ko sẵn sàng cho giải thuật Ford-Bellman", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1019,16 +1019,16 @@ namespace Graph
             {
                 try
                 {
-                    if (cbEndPoint.SelectedIndex == 0) MessageBox.Show("Run step aren't available for Point to All", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (cbEndPoint.SelectedIndex == 0) MessageBox.Show("Run step aren't available for Point to All", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else if (isPaths) DijkstraStep();
-                    else MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("Lỗi rồi hehe!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi rồi huhu!", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("Start point or End point isn't choose!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Chọn đỉnh đầu với đỉnh cuối đi nè", "Thông báo cho bạn 1 tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
 
