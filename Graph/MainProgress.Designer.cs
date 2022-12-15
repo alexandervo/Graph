@@ -194,12 +194,12 @@
             this.ctMenuStripMatrix.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyMatrixToClipboardToolStripMenuItem});
             this.ctMenuStripMatrix.Name = "ctMenuStripMatrix";
-            this.ctMenuStripMatrix.Size = new System.Drawing.Size(209, 26);
+            this.ctMenuStripMatrix.Size = new System.Drawing.Size(247, 28);
             // 
             // copyMatrixToClipboardToolStripMenuItem
             // 
             this.copyMatrixToClipboardToolStripMenuItem.Name = "copyMatrixToClipboardToolStripMenuItem";
-            this.copyMatrixToClipboardToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.copyMatrixToClipboardToolStripMenuItem.Size = new System.Drawing.Size(246, 24);
             this.copyMatrixToClipboardToolStripMenuItem.Text = "Copy Matrix to Clipboard";
             this.copyMatrixToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyMatrixToClipboardToolStripMenuItem_Click);
             // 
@@ -236,26 +236,26 @@
             this.updateToolStripMenuItem,
             this.copyGraphImageInClipboardToolStripMenuItem});
             this.ctMenustripGrapView.Name = "ctMenustripGrapView";
-            this.ctMenustripGrapView.Size = new System.Drawing.Size(261, 70);
+            this.ctMenustripGrapView.Size = new System.Drawing.Size(314, 76);
             // 
             // clearAllToolStripMenuItem
             // 
             this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(313, 24);
             this.clearAllToolStripMenuItem.Text = "Clear all";
             this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(313, 24);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // copyGraphImageInClipboardToolStripMenuItem
             // 
             this.copyGraphImageInClipboardToolStripMenuItem.Name = "copyGraphImageInClipboardToolStripMenuItem";
-            this.copyGraphImageInClipboardToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.copyGraphImageInClipboardToolStripMenuItem.Size = new System.Drawing.Size(313, 24);
             this.copyGraphImageInClipboardToolStripMenuItem.Text = "Copy Graph image to the clipboard";
             this.copyGraphImageInClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyGraphImageInClipboardToolStripMenuItem_Click);
             // 
@@ -382,9 +382,8 @@
             this.TabHome,
             this.TabSPA,
             this.TabHelp});
-            this.kryptonRibbon.SelectedContext = null;
             this.kryptonRibbon.SelectedTab = this.TabSPA;
-            this.kryptonRibbon.Size = new System.Drawing.Size(1276, 115);
+            this.kryptonRibbon.Size = new System.Drawing.Size(1314, 135);
             this.kryptonRibbon.TabIndex = 24;
             // 
             // TabHome
@@ -625,7 +624,7 @@
             // 
             this.cbStartPoint.DropDownWidth = 121;
             this.cbStartPoint.FormattingEnabled = false;
-            this.cbStartPoint.ItemHeight = 15;
+            this.cbStartPoint.ItemHeight = 19;
             this.cbStartPoint.MaximumSize = new System.Drawing.Size(50, 0);
             this.cbStartPoint.MinimumSize = new System.Drawing.Size(50, 0);
             this.cbStartPoint.Text = "";
@@ -634,7 +633,7 @@
             // 
             this.cbEndPoint.DropDownWidth = 121;
             this.cbEndPoint.FormattingEnabled = false;
-            this.cbEndPoint.ItemHeight = 15;
+            this.cbEndPoint.ItemHeight = 19;
             this.cbEndPoint.Items.AddRange(new object[] {
             "All"});
             this.cbEndPoint.MaximumSize = new System.Drawing.Size(50, 0);
@@ -712,12 +711,12 @@
             // 
             // MainProgress
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1293, 660);
+            this.ClientSize = new System.Drawing.Size(1335, 660);
             this.Controls.Add(this.kryptonRibbon);
             this.Controls.Add(this.panelControl);
             this.DoubleBuffered = true;
