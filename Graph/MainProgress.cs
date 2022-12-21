@@ -926,7 +926,7 @@ namespace Graph
                 }
 
             }
-            else MessageBox.Show("Start point or End point isn't choose!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Hãy chọn đỉnh đầu hoặc đỉnh cuối đi nè!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DijkstraStep()
@@ -972,13 +972,13 @@ namespace Graph
                     segment_dijkstra_save.Clear();
                     segment_dijkstra_Review.Clear();
                     picGraphView.Invalidate();
-                    MessageBox.Show("Done!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Hoàn thành!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dijkstra_step = true;
                 }
             }
             else
             {
-                MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi !", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 segment_dijkstra_save.Clear();
                 segment_dijkstra_Review.Clear();
                 picGraphView.Invalidate();
@@ -994,12 +994,12 @@ namespace Graph
             SPAStep.Checked = true;
             if (weightNeg && SPADijkstra.Checked)
             {
-                MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi rồi!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (SPAFordBellman.Checked)
             {
-                MessageBox.Show("Run step aren't available for Ford-Bellman Algorithms", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không khả dụng với giải thuật Ford-Bellman!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1007,16 +1007,16 @@ namespace Graph
             {
                 try
                 {
-                    if (cbEndPoint.SelectedIndex == 0) MessageBox.Show("Run step aren't available for Point to All", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (cbEndPoint.SelectedIndex == 0) MessageBox.Show("Không khả dụng khi chạy đến tất cả các đỉnh!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else if (isPaths) DijkstraStep();
-                    else MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("Lỗi rồi!!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi rồi", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("Start point or End point isn't choose!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Đỉnh đầu và cuối chưa được chọn nè!", "Logs", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
 

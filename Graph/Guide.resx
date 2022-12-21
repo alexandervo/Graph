@@ -120,13 +120,13 @@
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>Giải thích một vài chức năng có sẵn:
 _ Đồ thị được biểu diễn ở đây là đơn đồ thị (vô hướng hoặc có hướng)
-_ Open/Save: Mở và lưu đồ thị 
-_ New: Tạo một đồ thị trống mới
+_ Mở/Lưu: Mở và lưu đồ thị 
+_ Đồ thị mới: Tạo một đồ thị trống mới
 _ Kéo đường thẳng và nhập giá trị lần nữa để cập nhật lại trọng số cạnh đó
-_ CutEdge: xóa một cạnh có sẵn
-_ Update: cập nhật lại đồ thị 
-_ Step-by-step: chạy từng bước một thuật toán
-_ Path: hiển thị đường đi ngắn nhất
-_ Algorithms: chọn thuật toán muốn thực hiện</value>
+_ Xóa cạnh: xóa một cạnh có sẵn
+_ Làm mới: đưa đồ thị trờ lại trạng thái khi chưa sử dụng thuật toán
+_ Chạy từng bước: chạy từng bước một thuật toán
+_ Đường đi: hiển thị đường đi ngắn nhất
+-Thuật toán đường đi ngắn nhất: chọn thuật toán muốn thực hiện</value>
   </data>
 </root>
